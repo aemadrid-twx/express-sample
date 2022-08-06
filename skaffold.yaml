@@ -1,0 +1,14 @@
+---
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: express-sample
+build:
+  artifacts:
+    - image: matamagu/express-sample
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+      - manifests.yaml
